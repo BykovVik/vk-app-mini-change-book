@@ -1,0 +1,98 @@
+#description {
+    background-color: #FF9408;
+    position: relative;
+    overflow: hidden;
+}
+@media screen and (min-width: 320px) {
+    .Description {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        background-color: #FF9408;
+        padding: 5%;
+        overflow: auto;
+    }
+    .TextBox {
+        margin: 0 auto;
+        padding: 1%;
+        z-index: 3;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+    }
+    .TextWrap > p {
+        font-size: 12px;
+        font-weight: normal;
+        padding: 1%;
+    }
+    .ReturnButton {
+        margin: 0 auto;
+        z-index: 2;
+    }
+    .ReturnButton > button {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 5px;
+        margin: 5% 0;
+        padding: 1%;
+        color: white;
+        font-weight: normal;
+        text-align: center;
+    }
+    .ReturnButton > button > img {
+        width: 32px;
+        height: 32px;
+        animation: rotate 4s linear infinite;
+        margin-right: 2%;
+    }
+    .ReturnButton > button {
+        font-size: 12px;
+    }
+    
+}
+@media screen and (min-width: 480px) {
+    .Description {
+        align-items: normal;
+    }
+    .TextWrap > p {
+        font-size: 14px;
+    }
+    .ReturnButton > button {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 600px) {
+    .Description {
+        align-items: center;
+    }
+    .TextWrap > p {
+        font-size: 12px;
+        font-weight: bold;
+        padding: 2%;
+    }
+    .ReturnButton > button {
+        font-weight: bold;
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+    .ReturnButton > button {
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .TextWrap > p {
+        font-size: 14px;
+    }
+    .ReturnButton > button {
+        font-size: 14px;
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

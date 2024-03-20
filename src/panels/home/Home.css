@@ -1,0 +1,156 @@
+#home {
+    background-color: #FF9408;
+    position: relative;
+    overflow: hidden;
+}
+@media screen and (min-width: 320px) {
+    .UserInfo {
+        font-size: 12px;
+    }
+    .ButtonWrap > button {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 5px;
+        margin: 1% 0;
+        padding: 3%;
+        color: white;
+        font-weight: normal;
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 480px) {
+    .UserInfo {
+        font-size: 14px;
+    }
+    .ButtonWrap > button {
+        font-weight: normal;
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 600px) {
+    .UserInfo {
+        font-size: 12px;
+    }
+    .ButtonWrap > button {
+        font-weight: bold;
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .UserInfo {
+        font-size: 14px;
+    }
+    .ButtonWrap > button {
+        font-size: 14px;
+    }
+}
+.Home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #FF9408;
+    padding: 2%;
+}
+.Home > div {
+    margin: 0 auto;
+}
+.UserInfo {
+    position: absolute;
+    left: 0;
+    top: 2%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    z-index: 2;
+    padding: 1%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.UserInfo > div {
+    padding-left: 1%;
+}
+.UserInfo > div > img {
+    animation: rotate 4s linear infinite;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.UserGreeting > p {
+    margin: 0;
+    font-weight: bold;
+}
+.UserGreeting > p > span {
+    padding-left: 1%;
+    color: rgb(36, 167, 255);
+}
+.UserGreeting {
+    flex-grow: 1;
+}
+.Title {
+    margin: 0 auto;
+    z-index: 2;
+}
+.Title > img {
+    width: 100%;
+}
+#TriangleTopLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 0;
+	height: 0;
+	border-top: 400px solid #014D4E; 
+	border-right: 400px solid transparent;
+    z-index: 1;		
+}
+#TriangleBottomRight {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+	width: 0;
+	height: 0;
+	border-bottom: 300px solid #017374; 
+	border-left: 300px solid transparent;
+    z-index: 1;
+}
+.ButtonBox {
+    margin: 0 auto;
+    z-index: 2;
+}
+.ButtonWrap {
+    margin: 0 auto;
+}
+.ButtonWrap > button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.BottomInfo {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 2%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    padding: 1%;
+}
+.BottomInfo:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.BottomInfoItem {
+    margin: 0 1%;
+}
+.BottomInfoItem > a > img {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 194px;
+}
+.BottomInfoItem > a > img:hover {
+    border: 2px solid white;
+}

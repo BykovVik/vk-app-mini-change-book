@@ -1,0 +1,162 @@
+#game {
+    position: relative;
+    background-color: #FF9408;
+    overflow: hidden;
+}
+@media screen and (min-width: 320px) {
+    .Game {
+        display: flex;
+        align-items: center;
+        overflow-y: scroll;
+        height: 100vh;
+        background-color: #FF9408;
+        padding: 2%;
+        overflow: auto;
+    }
+    .Game > div {
+        width: 100%;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .GameBox {
+        margin: 0 auto;
+        z-index: 3;
+        padding: 5%;
+    }
+    .GameBox > div > div > img {
+        width: 100%;
+    }
+    .ResultText > p {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: normal;
+        padding: 2%;
+    }
+    .ResultBoxMob {
+        margin: 0 auto;
+        z-index: 2;
+        width: 100%;
+    }
+    .ResultBoxMob > div > img {
+        width: 100%;
+    }
+    .ButtonBlock {
+        margin: 0 auto;
+        z-index: 2;
+    }
+    .ButtonBlock > button {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 5px;
+        padding: 3%;
+        margin-bottom: 5%;
+        color: white;
+        font-weight: normal;
+        font-size: 12px;
+    }
+    .ButtonBlock > button:active {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    .FinalButtons {
+        display: flex;
+    }
+    .FinalButtons > button {
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        padding: 3%;
+        margin: 1% 2% 5% 2%;
+        color: white;
+        font-weight: normal;
+        font-size: 12px;
+    }
+    #GoHome {
+        background-color: rgb(155, 31, 31);
+    }#GoHome:hover {
+        background-color: rgb(114, 23, 23);
+    }
+    #RePost {
+        background-color: #017374;
+    }
+    #RePost:hover {
+        background-color: #014D4E;
+    }
+}
+@media screen and (min-width: 480px) {
+    .Game {
+        align-items: normal;
+    }
+}
+@media screen and (min-width: 600px) {
+    .Game {
+        align-items: center;
+    }
+    .ResultText > p {
+        font-weight: bold;
+    }
+    .ButtonBlock > button {
+        font-weight: bold;
+    }
+    .ReturnButton > button {
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .FinalButtons > button {
+        font-weight: bold;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .ResultBox {
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        width: 20%;
+        z-index: 2;
+    }
+    .ResultBox > div > img {
+        width: 100%;
+    }
+    .RetButton > button {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 5px;
+        padding: 1%;
+        font-weight: bold;
+        text-align: left;
+        left: 10px;
+        top: 10px;
+        bottom: auto;
+        width: 50%;
+        color: #014D4E;
+        z-index: 2;
+    }
+    .RetButton > button > img {
+        animation: rotate 4s linear infinite;
+        margin-right: 2%;
+    }
+
+    .ResultText > p {
+        font-size: 14px;
+    }
+    .ButtonBlock > button {
+        font-size: 14px;
+    }
+    .ReturnButton > button {
+        font-size: 14px;
+    }
+    .FinalButtons > button {
+        font-size: 14px;
+    }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
