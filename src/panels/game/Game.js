@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import { Panel} from '@vkontakte/vkui';
 import { Col, Container, Row } from 'react-bootstrap'
@@ -25,12 +25,47 @@ const Game = ({nav, id}) => {
     const [result, setResult] = useState(false)
     const [resultText, setResultText] = useState("")
 
+    //Advertising preparation
+    useEffect(() => {
+        bridge.send('VKWebAppCheckNativeAds', { ad_format: 'reward' })
+        .then((data) => {
+            if (data.result) {
+                console.log("Реклама готова к публикации.")
+            } else {
+                console.log('Рекламные материалы не найдены. Делаю запрос.');
+            }
+        })
+        .catch((error) => { console.log(error); /* Ошибка */  });
+    }, [])
+
+    //Show adds
+    const showAdd = () => {
+        
+        bridge.send('VKWebAppShowNativeAds', { ad_format: 'reward' })
+        .then((data) => {
+            if (data.result) {
+                console.log('Advertisement shown');
+                routeNavigator.push('/');
+            } else {
+                console.log('Error while displaying');
+                routeNavigator.push('/');
+            }
+        })
+        .catch((error) => { 
+            console.log(error);
+            routeNavigator.push('/');
+        });
+
+    }
+
+    //Result handler
     const showResult = () => {
         setResult(true)
         setCurrentIndex(currentIndex - 1);
         setResultText(data[lines.join(", ")])
     }
 
+    // Flip coins handler
     const flipCoins = () => {
         const newCoins = coins.map(() => (Math.random() < 0.5 ? 'heads' : 'tails'));
         setCoins(newCoins);
@@ -47,6 +82,7 @@ const Game = ({nav, id}) => {
         setCurrentIndex(currentIndex - 1);
     };
 
+    // Wall posting handler
     const wallPosting = () => {
 
         bridge.send("VKWebAppShowWallPostBox", {
@@ -55,6 +91,7 @@ const Game = ({nav, id}) => {
         })
         .then((data) => {
             console.log("WALL POSTING DATA", data)
+            showAdd()
         })
         .catch( (error) => {
             if (error.error_data.error_reason === 'Access to adding post denied') {
@@ -64,6 +101,7 @@ const Game = ({nav, id}) => {
         });
     }
 
+    // Permission request
     const AllowNotifications = () => {
         bridge.send('VKWebAppAllowNotifications')
         .then((data) => { 
@@ -124,7 +162,7 @@ const Game = ({nav, id}) => {
                     }
                     {currentIndex === -2 &&
                         <div className='FinalButtons'>
-                            <button id="GoHome" onClick={() => routeNavigator.push('/')}>На главную</button>
+                            <button id="GoHome" onClick={showAdd}>На главную</button>
                             <button id="RePost" onClick={wallPosting}>Добавить к себе</button>
                         </div>
                     }
